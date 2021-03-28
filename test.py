@@ -1,14 +1,10 @@
 import cv2
 import numpy as np
 
-from numpy.linalg import norm
-
 cap = cv2.VideoCapture('src/test_right.mp4')
-
 
 if (cap.isOpened()== False): 
   print("Error opening video stream or file")
-
 
 ret, frame_prev = cap.read()
 frame_prev = frame_prev[:,:,0].astype(np.float32)
@@ -40,7 +36,5 @@ while(cap.isOpened()):
   else: 
     break
 
-
 cap.release()
 cv2.destroyAllWindows()
-
